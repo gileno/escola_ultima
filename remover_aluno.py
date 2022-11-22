@@ -8,4 +8,13 @@ cursor = conexao.cursor()
 
 consulta_aluno(cursor)
 
+aluno_id = input("Digite o ID do aluno: ")
+aluno_id = int(aluno_id)
+
+sql = 'delete from aluno where id = ?'
+
+cursor.execute(sql, [aluno_id])
+
+conexao.commit()
+
 conexao.close()
